@@ -1,6 +1,6 @@
 # Angularbasics
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0. This Project is my atempt on Angular 2 basics. This covers concepts of Angular Components, Directives, Services (Dependency Injection), Custom Angular Events, Tempaltes Forms, Modal Driven Forms and Angular Animations.
 
 ## Development server
 

@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <h2>User form</h2>
+  <form class="col-lg-6" #userDataFrom="ngForm" (ngSubmit)="userDataFromSubmitted(userDataFrom.value)" novalidate>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" minlength="4" required #nameInput="ngModel" id="name" class="form-control" name="name" ngModel>
+        <div class="alert alert-danger" *ngIf="nameInput.errors && (nameInput.dirty || nameInput.touched)">
+          <div [hidden]="!nameInput.errors.required">
+            <p>Name is mandatory</p>
+          </div>
+          <div [hidden]="!nameInput.errors.minlength">
+            <p>Name should not be less that 4 chars</p>
+          </div>
+        </div>
+          <b>{{nameInput.className}}</b>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" class="form-control" name="email" ngModel>
+      </div>
+      <div ngModelGroup="address">
+        <div class="form-group">
+          <label for="street">Street:</label>
+          <input type="text" id="street" class="form-control" name="street" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input type="text" id="city" class="form-control" name="city" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="pincode">Pin Code:</label>
+          <input type="text" id="pincode" class="form-control" name="pincode" ngModel>
+        </div>
+      </div>
+      <button [disabled]="!userDataFrom.form.valid" class="btn btn-primary" type="submit" name="Submit">Submit</button>
+  </form>
+
+</div>
